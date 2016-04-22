@@ -1,0 +1,44 @@
+<html>
+
+<body>
+    <div class="home-page">
+        <div class="home-page_dark">
+            <div class="home-page-content_line">
+                <div class="home-page-content_line1">
+                    <div class="home-page-content_line2"></div>
+                    <div class="clear"></div>
+                    <div class="home-page-content_text">
+                        <p>
+                            Designing my own house feels
+                            <br>like an experiment. You are both
+                            <br>the designer ana user and you learn
+                            <br>many different thing along the way.
+                            <br>
+                            <br>
+                            <a id="link_home_to_ctg" href="categories"> <i style="color:yellow;" class="fa fa-chevron-right"></i>
+
+                            <span> Categories</span></a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+    $('#link_home_to_ctg').click(function() {
+        var c_view = $('.content-view');
+        var page = $(this).attr('href');
+        $("li").removeAttr("style");
+        $('#categories').css({
+            "text-decoration": "underline",
+            "color": "white"
+        });
+
+        c_view.load('views/' + page + '.html');
+        return false;
+
+    });
+    </script>
+</body>
+
+</html>

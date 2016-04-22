@@ -1,0 +1,55 @@
+<html>
+<head>
+	<script src="js/lightbox2/dist/js/lightbox.js"></script>
+    <link rel="stylesheet" href="js/lightbox2/dist/css/lightbox.css">
+</head>
+<body>
+    <div class="categories-page">
+        <div class="categories-page_dark">
+            <div class="categories-page_content">
+                <div class="categories-page_head">
+                    <p>
+                        <a href="#"> <span style="color:yellow;">
+                      <i class="fa fa-chevron-circle-right"></i>
+</span> CATEGORIES</a>
+                    </p>
+                </div>
+                <div class="categories-page_show">
+                    <div class="categories-page_show-head">
+                        <ul class="link_ctg" id="link_ctg_to_content">
+                            <li id="venice" class="locate"><a href="venice">Venice</a></li>
+                            <li class="locate"><a href="calif">California</a></li>
+                            <li class="locate"><a href="taiwan">Taiwan</a></li>
+                        </ul>
+                    </div>
+                    <div class="content-ctg-view"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+    $(document).ready(function() {
+        var cc_view = $('.content-ctg-view');
+        cc_view.load('views/ctg/venice.html');
+        $('#venice').css(
+            "opacity", "1"
+        );
+
+
+
+        $('ul.link_ctg li a').click(function() {
+            $("li.locate").removeAttr("style");
+            var page = $(this).attr('href');
+            console.log(this);
+            $(this).parent().css(
+                "opacity", "1"
+            );
+            cc_view.load('views/ctg/' + page + '.html');
+            return false;
+        });
+    });
+    </script>
+</body>
+
+</html>

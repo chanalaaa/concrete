@@ -1,0 +1,29 @@
+@import 'reset';
+
+body {
+    font-family: 'Radley', serif;
+    font-size: 1.05em;
+}
+
+.container {
+    overflow: hidden;
+}
+
+h1 {
+    font-size: 2em;
+}
+
+.clear {
+    clear: both;
+}
+
+$md: "screen and (max-width: 960px)";
+$mdd: "screen and (mix-width: 770px)";
+$sm: "screen and (max-width: 763px)";
+
+//$lg: "screen and (max-width: 1200px)";
+
+
+@import 'nav';
+@import 'content';
+
